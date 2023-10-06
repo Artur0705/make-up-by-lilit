@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 const adminRoutes = require("./routes/adminRoutes");
-app.use("/api/admin-login", adminRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.get("/", (req, res) => {
   console.log("Hello from server");

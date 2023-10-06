@@ -1,4 +1,7 @@
 const bcrypt = require("bcrypt");
+const { generateToken } = require("../utils/tokenUtil");
+const { blacklistToken } = require("../middlewares/authMiddleware");
+
 require("dotenv").config();
 
 exports.login = async (req, res) => {
@@ -15,5 +18,19 @@ exports.login = async (req, res) => {
     return res.status(401).send("Access denied. Invalid password.");
   }
 
-  res.send("Logged in successfully.");
+  const token = generateToken(username);
+  res.send({ message: "Logged in successfully.", token });
+};
+
+exports.logout = (req, res) => {
+  const authHeader = req.header("Authorization");
+  if (!authHeader)
+    return res.status(401).send("Access denied. No token provided.");
+
+  const token = authHeader.split(" ")[1];
+  if (!token) return res.status(401).send("Access denied. No token provided.");
+
+  blacklistToken(token);
+
+  res.send("Logged out successfully.");
 };
