@@ -12,6 +12,9 @@ const PORT = process.env.PORT || 8000;
 app.use(express.json());
 app.use(cors());
 
+const adminRoutes = require("./routes/adminRoutes");
+app.use("/api/admin-login", adminRoutes);
+
 app.get("/", (req, res) => {
   console.log("Hello from server");
   res.send("Test from server");
