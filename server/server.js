@@ -13,7 +13,10 @@ app.use(express.json());
 app.use(cors());
 
 const adminRoutes = require("./routes/adminRoutes");
+const servicesRoutes = require("./routes/servicesRoutes");
+
 app.use("/api/admin", adminRoutes);
+app.use("/api/services", servicesRoutes);
 
 app.get("/", (req, res) => {
   console.log("Hello from server");
