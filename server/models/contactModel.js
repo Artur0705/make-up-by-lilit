@@ -1,0 +1,49 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const contactSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    mobile: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    eventDate: {
+      type: Date,
+      required: true,
+    },
+    serviceType: {
+      type: String,
+      required: true,
+    },
+    totalPeopleMakeup: {
+      type: Number,
+      required: true,
+    },
+    totalPeopleHair: {
+      type: Number,
+      required: true,
+    },
+    timeToFinish: {
+      type: String,
+      required: true,
+    },
+    applicationAddress: {
+      type: String,
+    },
+    addedQuestionsOrInfo: {
+      type: String,
+      required: false,
+    },
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model("Contact", contactSchema);
