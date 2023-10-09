@@ -19,11 +19,13 @@ const adminRoutes = require("./routes/adminRoutes");
 const servicesRoutes = require("./routes/servicesRoutes");
 const portfolioRoutes = require("./routes/portfolioRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const faqRoutes = require("./routes/faqRoutes");
 
 app.use("/api/admin", adminRoutes);
 app.use("/api/services", servicesRoutes);
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/faq", faqRoutes);
 
 app.get("/", (req, res) => {
   console.log("Hello from server");
