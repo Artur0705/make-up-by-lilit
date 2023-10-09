@@ -29,7 +29,7 @@ exports.getPortfolioItemById = asyncHandler(async (req, res, next) => {
 exports.createPortfolioItem = asyncHandler(async (req, res, next) => {
   try {
     const newPortfolioItem = await Portfolio.create(req.body);
-    res.status(201).json(newPortfolioItem);
+    res.status(200).json(newPortfolioItem);
   } catch (error) {
     next(error);
   }

@@ -16,11 +16,15 @@ const adminRoutes = require("./routes/adminRoutes");
 const servicesRoutes = require("./routes/servicesRoutes");
 const portfolioRoutes = require("./routes/portfolioRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const availabilityRoutes = require("./routes/availabilityRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 
 app.use("/api/admin", adminRoutes);
 app.use("/api/services", servicesRoutes);
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/availability", availabilityRoutes);
+app.use("/api/booking", bookingRoutes);
 
 app.get("/", (req, res) => {
   console.log("Hello from server");
