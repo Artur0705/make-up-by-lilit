@@ -32,6 +32,9 @@ app.get("/", (req, res) => {
   res.send("Test from server");
 });
 
+app.use(notFound);
+app.use(errorHandler);
+
 db.once("open", () => {
   app.listen(PORT, () => {
     console.log(`🌍 Now listening on PORT:${PORT}`);
