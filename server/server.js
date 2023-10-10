@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const path = require("path");
 
 const db = require("./config/connection.js");
 
@@ -21,16 +22,27 @@ const portfolioRoutes = require("./routes/portfolioRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const faqRoutes = require("./routes/faqRoutes");
 
+const { notFound, errorHandler } = require("./middlewares/errorHandler.js");
+
 app.use("/api/admin", adminRoutes);
 app.use("/api/services", servicesRoutes);
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/faq", faqRoutes);
 
-app.get("/", (req, res) => {
-  console.log("Hello from server");
-  res.send("Test from server");
-});
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.use(express.static(path.join(__dirname, "../admin/build")));
+
+  app.get("/admin", (req, res) => {
+    console.log("Admin route accessed");
+    res.sendFile(path.join(`${__dirname}/../admin/build/index.html`));
+  });
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
+  });
+}
 
 app.use(notFound);
 app.use(errorHandler);
