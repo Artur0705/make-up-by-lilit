@@ -19,7 +19,7 @@ exports.login = async (req, res) => {
   }
 
   const token = generateToken(username);
-  res.send({ message: "Logged in successfully.", token });
+  res.send({ message: "Logged in successfully.", token, username });
 };
 
 exports.logout = (req, res) => {

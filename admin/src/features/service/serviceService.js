@@ -1,7 +1,7 @@
 import { axiosInstance, config } from "../../utils/axiosConfig";
 
 const getServices = async () => {
-  const response = await axiosInstance.get("/services");
+  const response = await axiosInstance.get("services");
   if (response.data) {
     return response.data;
   }

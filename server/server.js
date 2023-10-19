@@ -21,6 +21,7 @@ const servicesRoutes = require("./routes/servicesRoutes");
 const portfolioRoutes = require("./routes/portfolioRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const faqRoutes = require("./routes/faqRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 const { notFound, errorHandler } = require("./middlewares/errorHandler.js");
 
@@ -29,6 +30,7 @@ app.use("/api/services", servicesRoutes);
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/faq", faqRoutes);
+app.use("/api/upload", uploadRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
