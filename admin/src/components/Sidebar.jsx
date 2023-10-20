@@ -21,7 +21,6 @@ const Sidebar = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -52,32 +51,38 @@ const Sidebar = () => {
       >
         <ul>
           <li className="mb-2">
-            <Link to="/" className="text-white hover:text-gray-300">
+            <Link to="/admin" className="text-white hover:text-gray-300">
               Dashboard
             </Link>
           </li>
           <li className="mb-2">
-            <Link to="/services" className="text-white hover:text-gray-300">
+            <Link
+              to="admin/services"
+              className="text-white hover:text-gray-300"
+            >
               Services
             </Link>
           </li>
           <li className="mb-2">
-            <Link to="/portfolio" className="text-white hover:text-gray-300">
+            <Link
+              to="admin/portfolio"
+              className="text-white hover:text-gray-300"
+            >
               Portfolio
             </Link>
           </li>
           <li className="mb-2">
-            <Link to="/contact" className="text-white hover:text-gray-300">
+            <Link to="admin/contact" className="text-white hover:text-gray-300">
               Enquiries
             </Link>
           </li>
           <li className="mb-2">
-            <Link to="/faq" className="text-white hover:text-gray-300">
+            <Link to="admin/faq" className="text-white hover:text-gray-300">
               FAQ
             </Link>
           </li>
           <li className="mb-2">
-            <Link to="/test" className="text-white hover:text-gray-300">
+            <Link to="admin/test" className="text-white hover:text-gray-300">
               Test Page
             </Link>
           </li>

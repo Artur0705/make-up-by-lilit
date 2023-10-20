@@ -1,14 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../features/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const authState = useSelector((state) => state.auth);
-  console.log(authState);
 
   const handleLogout = async () => {
     await dispatch(logout());
+    navigate("/admin");
   };
 
   return (

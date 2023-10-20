@@ -45,6 +45,20 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
   });
 }
+// <--------------FOR FUTURE TESTING--------------->
+// if (process.env.NODE_ENV === "production") {
+//   // Serve static files from the React app
+//   app.use(express.static(path.join(__dirname, "../client/build")));
+//   app.use(express.static(path.join(__dirname, "../admin/build")));
+// }
+
+// app.get('*', (req, res) => {
+//   const adminRoute = req.url.startsWith('/admin');
+//   const filePath = adminRoute
+//     ? path.join(__dirname, '../admin/build/index.html')
+//     : path.join(__dirname, '../client/build/index.html');
+//   res.sendFile(filePath);
+// });
 
 app.use(notFound);
 app.use(errorHandler);
