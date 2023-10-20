@@ -5,9 +5,9 @@ import MainLayout from "./components/MainLayout";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/Dashboard";
 import ServicesPage from "./pages/ServicesPage";
-import TestPage from "./pages/TestPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import EnquiriesPage from "./pages/EnquiriesPage";
+import FAQPage from "./pages/FAQPage";
 
 const App = () => {
   const authState = useSelector((state) => state.auth);
@@ -18,10 +18,10 @@ const App = () => {
         <MainLayout>
           <Routes>
             <Route path="/admin" element={<DashboardPage />} />
-            <Route path="/admin/test" element={<TestPage />} />
             <Route path="/admin/services" element={<ServicesPage />} />
             <Route path="/admin/portfolio" element={<PortfolioPage />} />
             <Route path="/admin/contact" element={<EnquiriesPage />} />
+            <Route path="/admin/faq" element={<FAQPage />} />
           </Routes>
         </MainLayout>
       ) : (

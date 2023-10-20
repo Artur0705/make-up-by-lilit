@@ -57,7 +57,7 @@ const PortfolioPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen p-6">
       <div className="container mx-auto">
-        <h1 className="text-3xl mb-6">Portfolio</h1>
+        <h1 className="text-3xl mb-6 text-center">Portfolio</h1>
         <button
           onClick={() => handleOpenForm(null)}
           className="mb-6 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700"
