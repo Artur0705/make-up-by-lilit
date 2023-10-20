@@ -114,3 +114,36 @@ exports.createContact = async (req, res) => {
     res.status(400).send(error.message);
   }
 };
+
+exports.updateContactStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+    const updatedContact = await Contact.findByIdAndUpdate(
+      id,
+      { status },
+      { new: true }
+    );
+    if (!updatedContact) {
+      return res.status(404).send("Contact not found");
+    }
+    res.json(updatedContact);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error.message);
+  }
+};
+
+exports.deleteContact = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedContact = await Contact.findByIdAndDelete(id);
+    if (!deletedContact) {
+      return res.status(404).send("Contact not found");
+    }
+    res.json(deletedContact);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error.message);
+  }
+};

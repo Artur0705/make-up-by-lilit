@@ -6,5 +6,7 @@ const { verifyToken } = require("../middlewares/authMiddleware");
 router.post("/", contactController.createContact);
 router.get("/", verifyToken, contactController.getAllContacts);
 router.get("/:id", verifyToken, contactController.getContact);
+router.patch("/:id/status", verifyToken, contactController.updateContactStatus);
+router.delete("/:id", verifyToken, contactController.deleteContact);
 
 module.exports = router;

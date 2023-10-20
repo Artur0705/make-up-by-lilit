@@ -42,6 +42,11 @@ const contactSchema = new Schema(
       type: String,
       required: false,
     },
+    status: {
+      type: String,
+      enum: ["New", "Contacted", "In Progress", "Resolved"],
+      default: "New",
+    },
   },
   { timestamps: true }
 );

@@ -7,6 +7,7 @@ import DashboardPage from "./pages/Dashboard";
 import ServicesPage from "./pages/ServicesPage";
 import TestPage from "./pages/TestPage";
 import PortfolioPage from "./pages/PortfolioPage";
+import EnquiriesPage from "./pages/EnquiriesPage";
 
 const App = () => {
   const authState = useSelector((state) => state.auth);
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/admin/test" element={<TestPage />} />
             <Route path="/admin/services" element={<ServicesPage />} />
             <Route path="/admin/portfolio" element={<PortfolioPage />} />
+            <Route path="/admin/contact" element={<EnquiriesPage />} />
           </Routes>
         </MainLayout>
       ) : (
