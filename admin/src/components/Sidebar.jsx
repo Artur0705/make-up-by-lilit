@@ -1,10 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/auth/authSlice";
+import { useNavigate } from "react-router-dom";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleLogout = async () => {
+    await dispatch(logout());
+    navigate("/admin");
+  };
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -36,7 +48,7 @@ const Sidebar = () => {
     <div className="relative md:static">
       <button
         onClick={toggleSidebar}
-        className="md:hidden p-4 bg-gray-700 absolute top-0 left-0 z-20"
+        className="md:hidden p-4 bg-transparent absolute top-0 left-0 z-20"
       >
         <GiHamburgerMenu className="h-6 w-6" />
       </button>
@@ -85,6 +97,14 @@ const Sidebar = () => {
             <Link to="admin/test" className="text-white hover:text-gray-300">
               Test Page
             </Link>
+          </li>
+          <li className="mb-2">
+            <button
+              onClick={handleLogout}
+              className="text-white bg-red-500 px-4 py-2 rounded mt-2"
+            >
+              Logout
+            </button>
           </li>
         </ul>
       </motion.aside>

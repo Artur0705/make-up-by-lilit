@@ -26,7 +26,7 @@ const ServiceCard = ({ service, editService, deleteServiceAction }) => (
     </div>
     <p>Description: {service.description}</p>
     <p>
-      Image:{" "}
+      Image:
       <img
         src={service.imageUrl}
         alt={service.name}

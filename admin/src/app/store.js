@@ -4,6 +4,7 @@ import serviceReducer from "../features/service/serviceSlice";
 import authReducer from "../features/auth/authSlice";
 import contactReducer from "../features/contact/contactSlice";
 import uploadReducer from "../features/upload/uploadSlice";
+import portfolioReducer from "../features/portfolio/portfolioSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,5 +12,6 @@ export const store = configureStore({
     auth: authReducer,
     contact: contactReducer,
     upload: uploadReducer,
+    portfolio: portfolioReducer,
   },
 });

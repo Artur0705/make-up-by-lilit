@@ -31,6 +31,8 @@ const DashboardPage = () => {
 
   const images = [
     "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
+    "https://media.gettyimages.com/id/1331637318/photo/portrait-of-young-afro-woman-with-bright-make-up.jpg?s=612x612&w=gi&k=20&c=t9NaVtyBNfIWDWgPZgmzdnFop9Oe_uYS4f9n8cCN0ak=",
+    "https://cdn.britannica.com/35/222035-050-C68AD682/makeup-cosmetics.jpg",
   ];
 
   return (
@@ -40,18 +42,18 @@ const DashboardPage = () => {
         infiniteLoop
         showThumbs={false}
         showStatus={false}
-        dynamicHeight={false}
+        dynamicHeight={true}
       >
         {images.map((image, index) => (
-          <div key={index} className="w-full h-screen">
+          <div key={index} className="w-full h-screen relative">
             <img
               src={image}
               alt="Slide"
-              className="w-full h-screen object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
-      </Carousel>
+      </Carousel>{" "}
       <div className="absolute top-0 left-0 w-full h-full p-4 flex flex-col justify-between bg-gradient-to-b from-transparent to-black">
         <div className="flex justify-between">
           <Card className="bg-transparent border-0 text-white">
