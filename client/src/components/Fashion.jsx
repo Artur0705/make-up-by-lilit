@@ -14,7 +14,7 @@ const Fashion = () => {
         </p>
         <p className="text-center text-xl italic">Make-up</p>
         <Link to="/portfolio">
-          <button className="text-center">view more</button>
+          <button className="btn text-center">view more</button>
         </Link>
       </div>
       <img

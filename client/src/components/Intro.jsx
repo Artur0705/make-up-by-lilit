@@ -15,7 +15,7 @@ const Intro = () => {
 export const Title = ({ title }) => {
   return (
     <div className="flex w-full justify-center text-white tracking-widest sm:tracking-normal text-6xl pb-4 lg:py-4">
-      <p className="text-center">{title}</p>
+      <p className="text-center mt-10 text-zinc-300 ">{title}</p>
     </div>
   );
 };

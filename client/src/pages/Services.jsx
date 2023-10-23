@@ -54,7 +54,7 @@ const Services = () => {
                 </div>
                 <div className="flex justify-end">
                   <Link to="/portfolio">
-                    <button className="mt-4 py-2 px-4 bg-white text-gray-800 rounded-full">
+                    <button className="bg-zinc-700 text-zinc-400 px-8 py-2 rounded-full text-lg font-semibold transition-transform duration-300 transform hover:scale-105">
                       Book Now
                     </button>
                   </Link>

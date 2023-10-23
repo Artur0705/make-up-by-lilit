@@ -18,7 +18,7 @@ const EventsIntro = () => {
           needs.
         </p>
         <Link to="/portfolio">
-          <button className="text-center">view more</button>
+          <button className="text-center btn">view more</button>
         </Link>
       </div>
       <img

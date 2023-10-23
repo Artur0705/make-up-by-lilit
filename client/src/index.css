@@ -16,7 +16,7 @@ body {
   backdrop-filter: blur(2px);
 }
 
-button {
+.btn {
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid #fbf5f2;
@@ -31,7 +31,7 @@ button {
   transition: all 0.2s;
 }
 
-button:hover {
+.btn:hover {
   color: #000000;
   background-color: #fbf5f2;
 }
