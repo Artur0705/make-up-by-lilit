@@ -11,7 +11,6 @@ import {
   AiOutlineFolderOpen,
   AiOutlineMail,
   AiOutlineQuestionCircle,
-  AiOutlineFileText,
   AiOutlineLogout,
 } from "react-icons/ai";
 
@@ -108,12 +107,6 @@ const Sidebar = () => {
             <AiOutlineQuestionCircle className="w-6 h-6" />
             <Link to="admin/faq" className="text-white hover:text-gray-300">
               FAQ
-            </Link>
-          </li>
-          <li className="mb-4 flex items-center space-x-2">
-            <AiOutlineFileText className="w-6 h-6" />
-            <Link to="admin/test" className="text-white hover:text-gray-300">
-              Test Page
             </Link>
           </li>
           <li className="mt-4">

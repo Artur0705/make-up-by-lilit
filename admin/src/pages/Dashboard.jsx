@@ -30,9 +30,13 @@ const DashboardPage = () => {
   }, []);
 
   const images = [
-    "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    "https://media.gettyimages.com/id/1331637318/photo/portrait-of-young-afro-woman-with-bright-make-up.jpg?s=612x612&w=gi&k=20&c=t9NaVtyBNfIWDWgPZgmzdnFop9Oe_uYS4f9n8cCN0ak=",
-    "https://cdn.britannica.com/35/222035-050-C68AD682/makeup-cosmetics.jpg",
+    "https://images.pexels.com/photos/1926620/pexels-photo-1926620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/3756242/pexels-photo-3756242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/1115128/pexels-photo-1115128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/7290735/pexels-photo-7290735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/12490383/pexels-photo-12490383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/13714629/pexels-photo-13714629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/7712471/pexels-photo-7712471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   ];
 
   return (
@@ -49,7 +53,7 @@ const DashboardPage = () => {
             <img
               src={image}
               alt="Slide"
-              className="w-full h-full object-cover"
+              className="w-full h-full md:object-contain object-cover"
             />
           </div>
         ))}
@@ -72,23 +76,30 @@ const DashboardPage = () => {
           </Card>
         </div>
         <div className="flex justify-between">
-          {/* Your Admin and Weather Info */}
           <Card className="bg-transparent border-0 text-white">
-            <h2 className="text-xl font-bold mb-2">Admin Information</h2>
+            <h2 className="text-lg font-bold mb-2 text-zinc-500">
+              Admin Information
+            </h2>
             {adminInfo ? (
               <>
-                <p>Username: {adminInfo.username}</p>
+                <p className="text-sm text-zinc-500">
+                  Username: {adminInfo.username}
+                </p>
               </>
             ) : (
               <p>No admin information available.</p>
             )}
           </Card>
           <Card className="bg-transparent border-0 text-white">
-            <h2 className="text-xl font-bold mb-2">Weather Information</h2>
+            <h2 className="text-lg font-bold mb-2 text-zinc-500">Weather</h2>
             {weather ? (
               <>
-                <p>Temperature: {Math.round(weather.main.temp - 273.15)}°C</p>
-                <p>Weather: {weather.weather[0].description}</p>
+                <p className="text-sm text-zinc-500">
+                  Temp: {Math.round(weather.main.temp - 273.15)}°C
+                </p>
+                <p className="text-sm text-zinc-500">
+                  Weather: {weather.weather[0].description}
+                </p>
               </>
             ) : (
               <p>Loading weather information...</p>
