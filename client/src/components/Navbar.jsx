@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -16,7 +17,11 @@ const Navbar = () => {
     <div className="h-[15vh] xl:h-[10vh] flex justify-center  z-50 uppercase font-normal">
       <nav className="w-5/6">
         {/* MOBILE-MENU */}
-        <section className="flex justify-end h-14 pt-7 lg:hidden">
+        <section className="flex justify-between items-center h-14 pt-7 lg:hidden">
+          {/* LOGO */}
+          <Link to="/" className="flex-shrink-0">
+            <img src={logo} alt="Logo" className="h-10 w-auto" />
+          </Link>
           {/* HAMBURGER-ICON */}
           <div
             className="space-y-2"
