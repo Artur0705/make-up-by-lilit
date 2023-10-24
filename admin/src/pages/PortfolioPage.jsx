@@ -5,7 +5,7 @@ import {
   deletePortfolio,
 } from "../features/portfolio/portfolioSlice";
 import PortfolioForm from "../components/PortfolioForm";
-import { Popconfirm, message, notification } from "antd";
+import { Popconfirm, message, notification, Spin } from "antd";
 
 const PortfolioPage = () => {
   const dispatch = useDispatch();
@@ -47,7 +47,11 @@ const PortfolioPage = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Spin size="large" />
+      </div>
+    );
   }
 
   if (isError) {
@@ -61,6 +65,7 @@ const PortfolioPage = () => {
         <button
           onClick={() => handleOpenForm(null)}
           className="mb-6 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700"
+          disabled={isLoading}
         >
           Create New Portfolio Item
         </button>
@@ -82,9 +87,10 @@ const PortfolioPage = () => {
                 <button
                   onClick={() => handleOpenForm(portfolio)}
                   className="text-indigo-600 hover:underline"
+                  disabled={isLoading}
                 >
                   Edit
-                </button>
+                </button>{" "}
                 <Popconfirm
                   title="Are you sure you want to delete this portfolio?"
                   onConfirm={() => handleDelete(portfolio._id)}

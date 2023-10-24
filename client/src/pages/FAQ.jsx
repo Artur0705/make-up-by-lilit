@@ -4,6 +4,7 @@ import { getFAQS } from "../features/faq/faqSlice";
 import Layout from "../components/Layout";
 import { Title } from "../components/Intro";
 import { Link } from "react-router-dom";
+import { Spin } from "antd";
 
 const FAQ = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,11 @@ const FAQ = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Spin size="large" />
+      </div>
+    );
   }
 
   if (isError) {

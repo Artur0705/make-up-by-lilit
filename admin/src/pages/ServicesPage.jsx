@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Form } from "antd";
+import { Button, Form, Spin } from "antd";
 import {
   getServices,
   createService,
@@ -109,7 +109,11 @@ const ServicesPage = () => {
 
   return (
     <div className="services-page p-4 md:p-8">
-      {isLoading && <div className="text-center py-4">Loading...</div>}
+      {isLoading && (
+        <div className="flex justify-center items-center min-h-screen">
+          <Spin size="large" />
+        </div>
+      )}
       {isError && (
         <div className="text-center text-red-600 py-4">
           An error occurred. Please try again.
