@@ -46,18 +46,32 @@ app.use("/api/upload", uploadRoutes);
 //   });
 // }
 // <--------------FOR FUTURE TESTING--------------->
+// if (process.env.NODE_ENV === "production") {
+//   // Serve static files from the React app
+//   app.use(express.static(path.join(__dirname, "../client/build")));
+//   app.use(express.static(path.join(__dirname, "../admin/build")));
+// }
+
+// app.get("*", (req, res) => {
+//   const adminRoute = req.url.startsWith("/admin");
+//   const filePath = adminRoute
+//     ? path.join(__dirname, "../admin/build/index.html")
+//     : path.join(__dirname, "../client/build/index.html");
+//   res.sendFile(filePath);
+// });
+
 if (process.env.NODE_ENV === "production") {
   // Serve static files from the React app
+  app.use("/admin", express.static(path.join(__dirname, "../admin/build")));
   app.use(express.static(path.join(__dirname, "../client/build")));
-  app.use(express.static(path.join(__dirname, "../admin/build")));
 }
 
+app.get("/admin/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../admin/build/index.html"));
+});
+
 app.get("*", (req, res) => {
-  const adminRoute = req.url.startsWith("/admin");
-  const filePath = adminRoute
-    ? path.join(__dirname, "../admin/build/index.html")
-    : path.join(__dirname, "../client/build/index.html");
-  res.sendFile(filePath);
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 app.use(notFound);
