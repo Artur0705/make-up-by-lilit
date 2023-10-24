@@ -70,7 +70,7 @@ const Contact = () => {
     } catch (error) {
       notification.error({
         message: "Submission Failed",
-        description: error.message, // Assuming error message is in this format
+        description: error.message,
       });
     }
   };
@@ -122,10 +122,12 @@ const Contact = () => {
             <Select
               name="serviceType"
               onChange={handleSelectChange}
-              options={services.map((service) => ({
-                label: service.name,
-                value: service.name,
-              }))}
+              options={services
+                .map((service) => ({
+                  label: service.name,
+                  value: service.name,
+                }))
+                .concat({ label: "Other", value: "Other" })}
               required
             />
             <input
