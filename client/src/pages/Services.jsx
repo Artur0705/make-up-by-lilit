@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../features/service/serviceSlice";
 import Layout from "../components/Layout";
 import { Title } from "../components/Intro";
-import { Link } from "react-router-dom";
 
 const Services = () => {
   const dispatch = useDispatch();
@@ -54,11 +53,15 @@ const Services = () => {
                   </p>
                 </div>
                 <div className="flex justify-end">
-                  <Link to={bookingUrl}>
+                  <a
+                    href={bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <button className="bg-zinc-700 text-zinc-400 px-8 py-2 rounded-full text-lg font-semibold transition-transform duration-300 transform hover:scale-105">
                       Book Now
                     </button>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
