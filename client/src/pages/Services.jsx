@@ -10,6 +10,7 @@ const Services = () => {
   const { services, isLoading, isError } = useSelector(
     (state) => state.service
   );
+  const bookingUrl = process.env.REACT_APP_BOOKIN_URL;
 
   useEffect(() => {
     dispatch(getServices());
@@ -53,7 +54,7 @@ const Services = () => {
                   </p>
                 </div>
                 <div className="flex justify-end">
-                  <Link to="/portfolio">
+                  <Link to={bookingUrl}>
                     <button className="bg-zinc-700 text-zinc-400 px-8 py-2 rounded-full text-lg font-semibold transition-transform duration-300 transform hover:scale-105">
                       Book Now
                     </button>

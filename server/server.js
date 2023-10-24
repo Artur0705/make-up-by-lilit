@@ -32,36 +32,7 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/faq", faqRoutes);
 app.use("/api/upload", uploadRoutes);
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname, "../client/build")));
-//   app.use(express.static(path.join(__dirname, "../admin/build")));
-
-//   app.get("/admin", (req, res) => {
-//     console.log("Admin route accessed");
-//     res.sendFile(path.join(`${__dirname}/../admin/build/index.html`));
-//   });
-
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(`${__dirname}/../client/build/index.html`));
-//   });
-// }
-// <--------------FOR FUTURE TESTING--------------->
-// if (process.env.NODE_ENV === "production") {
-//   // Serve static files from the React app
-//   app.use(express.static(path.join(__dirname, "../client/build")));
-//   app.use(express.static(path.join(__dirname, "../admin/build")));
-// }
-
-// app.get("*", (req, res) => {
-//   const adminRoute = req.url.startsWith("/admin");
-//   const filePath = adminRoute
-//     ? path.join(__dirname, "../admin/build/index.html")
-//     : path.join(__dirname, "../client/build/index.html");
-//   res.sendFile(filePath);
-// });
-
 if (process.env.NODE_ENV === "production") {
-  // Serve static files from the React app
   app.use("/admin", express.static(path.join(__dirname, "../admin/build")));
   app.use(express.static(path.join(__dirname, "../client/build")));
 }
