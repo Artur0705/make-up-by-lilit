@@ -10,7 +10,7 @@ const Services = () => {
   const { services, isLoading, isError } = useSelector(
     (state) => state.service
   );
-  const bookingUrl = process.env.REACT_APP_BOOKIN_URL;
+  const bookingUrl = process.env.REACT_APP_BOOKING_URL;
 
   useEffect(() => {
     dispatch(getServices());
