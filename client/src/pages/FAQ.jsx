@@ -4,7 +4,7 @@ import { getFAQS } from "../features/faq/faqSlice";
 import Layout from "../components/Layout";
 import { Title } from "../components/Intro";
 import { Link } from "react-router-dom";
-import { Spin } from "antd";
+import { Result, Spin } from "antd";
 
 const FAQ = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,11 @@ const FAQ = () => {
   }
 
   if (isError) {
-    return <div>Error loading FAQs</div>;
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Result status="401" subTitle="Error loading FAQs." />
+      </div>
+    );
   }
 
   return (

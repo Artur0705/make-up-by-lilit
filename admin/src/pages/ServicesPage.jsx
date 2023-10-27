@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Form, Spin } from "antd";
+import { Button, Form, Result, Spin } from "antd";
 import {
   getServices,
   createService,
@@ -114,11 +114,16 @@ const ServicesPage = () => {
           <Spin size="large" />
         </div>
       )}
+
       {isError && (
-        <div className="text-center text-red-600 py-4">
-          An error occurred. Please try again.
+        <div className="flex justify-center items-center min-h-screen">
+          <Result
+            status="401"
+            subTitle="An error occurred. Please try again."
+          />
         </div>
       )}
+
       <Button
         type="primary"
         onClick={showModal}

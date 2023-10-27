@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../features/service/serviceSlice";
 import Layout from "../components/Layout";
 import { Title } from "../components/Intro";
+import { Result, Spin } from "antd";
 
 const Services = () => {
   const dispatch = useDispatch();
@@ -19,8 +20,16 @@ const Services = () => {
     <Layout>
       <div className="container mx-auto p-4">
         <Title title="Services" />
-        {isLoading && <p>Loading...</p>}
-        {isError && <p>Error loading services.</p>}
+        {isLoading && (
+          <div className="flex justify-center items-center min-h-screen">
+            <Spin size="large" />
+          </div>
+        )}
+        {isError && (
+          <div className="flex justify-center items-center min-h-screen">
+            <Result status="401" subTitle="Error loading services." />
+          </div>
+        )}
         <div className="flex flex-col gap-4">
           {services.map((service) => (
             <div
