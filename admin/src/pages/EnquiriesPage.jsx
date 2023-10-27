@@ -6,7 +6,7 @@ import {
 } from "../features/contact/contactSlice";
 import EnquiryDetails from "../components/EnquiryDetails";
 import ReactPaginate from "react-paginate";
-import { Result, Spin, message } from "antd";
+import { Spin, message } from "antd";
 
 const EnquiriesPage = () => {
   const dispatch = useDispatch();
@@ -47,11 +47,7 @@ const EnquiriesPage = () => {
           <Spin size="large" />
         </div>
       )}
-      {isError && (
-        <div className="flex justify-center items-center min-h-screen">
-          <Result status="401" subTitle="Error loading contacts." />
-        </div>
-      )}
+      {isError && <div>Error loading contacts</div>}
       <ul className="divide-y divide-gray-200">
         {contacts
           .slice(pagesVisited, pagesVisited + enquiriesPerPage)
