@@ -181,7 +181,7 @@ const EnquiryDetails = ({ enquiry, onClose }) => {
             }}
           >
             <Button danger>Delete Enquiry</Button>
-          </Popconfirm>{" "}
+          </Popconfirm>
         </div>
       </div>
     </div>

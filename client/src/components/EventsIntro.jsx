@@ -22,6 +22,7 @@ const EventsIntro = () => {
         </Link>
       </div>
       <img
+        loading="lazy"
         src="https://images.pexels.com/photos/7514857/pexels-photo-7514857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="bride"
         className="h-screen w-full md:object-contain object-cover z-0 overflow-scroll"

@@ -20,7 +20,7 @@ const Navbar = () => {
         <section className="flex justify-between items-center h-14 pt-7 lg:hidden">
           {/* LOGO */}
           <Link to="/" className="flex-shrink-0">
-            <img src={logo} alt="Logo" className="h-10 w-auto" />
+            <img src={logo} loading="lazy" alt="Logo" className="h-10 w-auto" />
           </Link>
           {/* HAMBURGER-ICON */}
           <div

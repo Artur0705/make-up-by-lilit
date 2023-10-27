@@ -28,6 +28,7 @@ const ServiceCard = ({ service, editService, deleteServiceAction }) => (
     <p>
       Image:
       <img
+        loading="lazy"
         src={service.imageUrl}
         alt={service.name}
         className="w-full h-auto"

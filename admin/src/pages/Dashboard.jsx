@@ -51,6 +51,7 @@ const DashboardPage = () => {
         {images.map((image, index) => (
           <div key={index} className="w-full h-screen relative">
             <img
+              loading="lazy"
               src={image}
               alt="Slide"
               className="w-full h-full md:object-contain object-cover"

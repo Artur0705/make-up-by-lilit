@@ -9,6 +9,7 @@ const Gallery = ({ images }) => {
           className="relative group overflow-hidden rounded-lg shadow-lg"
         >
           <img
+            loading="lazy"
             src={image.imageUrl}
             alt={image.title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"

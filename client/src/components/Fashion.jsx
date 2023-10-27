@@ -18,6 +18,7 @@ const Fashion = () => {
         </Link>
       </div>
       <img
+        loading="lazy"
         src="https://images.pexels.com/photos/6648493/pexels-photo-6648493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="fashion"
         className="h-screen w-full md:object-contain object-cover z-0 overflow-scroll"

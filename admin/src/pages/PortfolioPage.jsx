@@ -76,6 +76,7 @@ const PortfolioPage = () => {
               className="bg-white p-6 rounded-lg shadow-lg"
             >
               <img
+                loading="lazy"
                 src={portfolio.imageUrl}
                 alt={portfolio.title}
                 className="w-full h-48 object-cover mb-4 rounded-t-lg"

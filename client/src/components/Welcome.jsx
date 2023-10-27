@@ -20,6 +20,7 @@ const Welcome = () => {
         </p>
       </div>
       <img
+        loading="lazy"
         src="https://images.pexels.com/photos/3522732/pexels-photo-3522732.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="welcome"
         className="h-screen w-full bg-center overflow-hidden	md:object-contain object-cover -z-999	opacity-40"
