@@ -176,7 +176,7 @@ const Contact = () => {
               <div className="flex justify-center items-center mt-4">
                 <Spin size="large" />
               </div>
-            )}{" "}
+            )}
             <button
               type="submit"
               className="w-full bg-zinc-700 text-zinc-400 px-8 py-2 rounded-full text-lg font-semibold transition-transform duration-300 transform hover:scale-105"
